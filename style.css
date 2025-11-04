@@ -1,0 +1,99 @@
+/* White background as requested */
+html, body {
+	margin: 0;
+	padding: 0;
+	background: #ffffff;
+	color: #111;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	padding: 16px;
+}
+
+.title {
+	margin: 0 0 4px 0;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+}
+
+.hud {
+	display: flex;
+	gap: 16px;
+	font-weight: 600;
+}
+
+#game {
+	border: 1px solid #e5e7eb;
+	box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+	max-width: 90vw;
+	height: auto;
+	background: #ffffff; /* ensure canvas matches white */
+	/* Improve mobile gestures: prevent browser gestures on canvas */
+	touch-action: none;
+}
+
+.controls {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+
+button {
+	background: #111;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	padding: 8px 12px;
+	cursor: pointer;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+button:active {
+	transform: translateY(1px);
+}
+
+.speed {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 600;
+}
+
+.touch { /* mobile d-pad */
+	display: grid;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.touch .row {
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+}
+
+.dpad {
+	width: 56px;
+	height: 56px;
+	border-radius: 12px;
+	font-size: 20px;
+}
+
+.help {
+	margin: 8px 0 0 0;
+	color: #4b5563;
+	font-size: 0.95rem;
+	text-align: center;
+}
+
+@media (pointer: fine) {
+	.touch { display: none; }
+}
+
+

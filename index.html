@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Snake</h1>
+        <div class="hud">
+            <div>Score: <span id="score">0</span></div>
+            <div>High: <span id="highScore">0</span></div>
+        </div>
+        <canvas id="game" width="480" height="480" aria-label="Snake game canvas" role="img"></canvas>
+
+        <div class="controls">
+            <button id="btnRestart" title="Restart (R)">Restart</button>
+            <button id="btnPause" title="Pause/Resume (Space)">Pause</button>
+            <label class="speed">
+                Speed
+                <input id="speedRange" type="range" min="5" max="20" value="10" />
+            </label>
+        </div>
+
+        <div class="touch">
+            <div class="row">
+                <button class="dpad" data-dir="up">▲</button>
+            </div>
+            <div class="row">
+                <button class="dpad" data-dir="left">◀</button>
+                <button class="dpad" data-dir="down">▼</button>
+                <button class="dpad" data-dir="right">▶</button>
+            </div>
+        </div>
+
+        <p class="help">Use arrow keys or WASD to move. Space to pause, R to restart.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
