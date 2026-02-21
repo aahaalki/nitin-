@@ -54,7 +54,7 @@
                         <a href="#" class="social-link"><i class="fab fa-github"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="https://instagram.com/____nitin81" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="email.com:rananitinrajput200@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="social-link open-message-box" title="aahaalki@gmail.com - Send message"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -431,8 +431,10 @@
                     <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:aahaalki200@gmail.com">aahaalki200@gmail.com</a>
+                            <a href="#" class="contact-email-link open-message-box" title="Send message">
+                                <i class="fas fa-envelope"></i>
+                                <span>aahaalki@gmail.com</span>
+                            </a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
@@ -462,6 +464,31 @@
             </div>
         </div>
     </section>
+
+    <!-- Message Box Modal -->
+    <div id="messageBoxModal" class="message-box-overlay">
+        <div class="message-box">
+            <div class="message-box-header">
+                <div class="message-box-icon-wrap">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="message-box-title">Send Message</h3>
+                <p class="message-box-to">aahaalki@gmail.com</p>
+                <button type="button" class="message-box-close" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="messageBoxForm" class="message-box-form">
+                <div class="form-group">
+                    <label class="message-box-label"><i class="fas fa-tag"></i> Subject</label>
+                    <input type="text" id="msgSubject" placeholder="Enter subject" required>
+                </div>
+                <div class="form-group">
+                    <label class="message-box-label"><i class="fas fa-align-left"></i> Message</label>
+                    <textarea id="msgBody" rows="3" placeholder="Write your message..." required></textarea>
+                </div>
+                <button type="submit" class="message-box-btn"><i class="fas fa-paper-plane"></i> Send Email</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
