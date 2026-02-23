@@ -736,11 +736,17 @@ section {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 4rem;
-    max-width: 1000px;
+    max-width: 600px;
     margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info {
+    width: 100%;
 }
 
 .contact-info h3 {
@@ -758,12 +764,14 @@ section {
 .contact-details {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     color: var(--text-secondary);
 }
@@ -789,10 +797,28 @@ section {
     color: var(--primary-color);
 }
 
+.contact-email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-email-link i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-bg);
+    border-radius: 50%;
+    color: var(--primary-color);
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    width: 100%;
 }
 
 .form-group {
@@ -821,6 +847,185 @@ section {
 
 .form-group textarea {
     resize: vertical;
+}
+
+/* Message Box Modal - Redesign */
+.message-box-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 1rem;
+}
+
+.message-box-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.message-box {
+    background: var(--dark-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    max-width: 300px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(16, 185, 129, 0.1);
+    transform: scale(0.92) translateY(10px);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.message-box-overlay.active .message-box {
+    transform: scale(1) translateY(0);
+}
+
+.message-box-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 1rem 1rem 0.85rem;
+    text-align: center;
+    position: relative;
+}
+
+.message-box-icon-wrap {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.message-box-icon-wrap i {
+    font-size: 1rem;
+    color: white;
+}
+
+.message-box-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.2rem;
+    letter-spacing: 0.02em;
+}
+
+.message-box-to {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.7rem;
+    margin: 0;
+    word-break: break-all;
+}
+
+.message-box-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 26px;
+    height: 26px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.message-box-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.message-box-form {
+    padding: 1rem 1rem 1.15rem;
+}
+
+.message-box-label {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+}
+
+.message-box-label i {
+    color: var(--primary-color);
+    font-size: 0.65rem;
+}
+
+.message-box-form .form-group {
+    margin-bottom: 0.6rem;
+}
+
+.message-box-form .form-group:last-of-type {
+    margin-bottom: 0.85rem;
+}
+
+.message-box-form input,
+.message-box-form textarea {
+    padding: 7px 10px;
+    font-size: 0.82rem;
+    border-radius: 6px;
+    background: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 100%;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.message-box-form input:focus,
+.message-box-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.15);
+}
+
+.message-box-form textarea {
+    min-height: 58px;
+    resize: vertical;
+}
+
+.message-box-btn {
+    width: 100%;
+    padding: 9px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+}
+
+.message-box-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+}
+
+.message-box-btn:active {
+    transform: translateY(0);
 }
 
 /* Footer */
@@ -900,10 +1105,6 @@ section {
         width: 50px;
         height: 50px;
         font-size: 1.75rem;
-    }
-
-    .contact-content {
-        grid-template-columns: 1fr;
     }
 
     .hero-buttons {
