@@ -240,6 +240,26 @@ if (messageBoxForm) {
         closeMessageBox();
         messageBoxForm.reset();
     });
+    // EmailJS init
+(function(){
+emailjs.init("ABZ1eAZCm3iSc1XBl");
+})();
+
+// Contact form email send
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+e.preventDefault();
+
+emailjs.sendForm(
+'service_mno8159',
+'template_ctenp1n',
+this
+)
+.then(function() {
+alert("Message sent successfully ✅");
+}, function(error) {
+alert("Failed to send ❌");
+});
+});
 }
 
 // Initialize on page load
@@ -259,5 +279,6 @@ window.addEventListener('load', () => {
         }, 100);
     }
 });
+
 
 
