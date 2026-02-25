@@ -763,16 +763,14 @@ section {
 
 .contact-details {
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
     align-items: center;
     gap: 1.5rem;
 }
 
 .contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    display: block;
+    width: 100%;
     color: var(--text-secondary);
 }
 
@@ -1174,5 +1172,21 @@ section {
         text-align: center;
     }
 }
-
-
+.contact-email{
+    margin-top:-10px
+}
+.contact-email-link{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.contact-location-link{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.contact-phone-link{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
